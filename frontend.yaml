@@ -22,7 +22,8 @@
          directory: /usr/share/nginx/html/
 
     - name: download frontend code
-      ansible.builtin.get_url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+      ansible.builtin.get_url:
+        url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
         dest: /tmp/frontend.zip
 
     - name: unzip files 
