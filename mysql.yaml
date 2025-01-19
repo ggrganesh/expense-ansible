@@ -23,6 +23,8 @@
         login_user: root
         login_password: ExpenseApp@1 
         login_host: mysql.ganeshdevops.online
+     register: mysql_info
+     ignore_errors: true
 
    - name: Print the mysql output 
      ansible.builtin.debug:
