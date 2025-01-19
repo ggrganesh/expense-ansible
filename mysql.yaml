@@ -32,4 +32,4 @@
 
    - name: Setup root password 
      ansible.builtin.command: 
-        when: mysql_info.failed is True
+        when: mysql_info.failed is true
