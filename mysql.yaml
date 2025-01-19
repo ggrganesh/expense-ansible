@@ -1,6 +1,8 @@
 - name: configure mysql server
   hosts: mysql
   become: yes
+  vars:
+   mysql_root_password: ExpenseApp@1
   tasks:
    - name: MYSQL libraries 
      ansible.builtin.pip:
@@ -23,7 +25,7 @@
    - name: Collect all info except settings and users by root
      community.mysql.mysql_info:
         login_user: root
-        login_password: ExpenseApp@1 
+        login_password: "{{ mysql_root_password }}"
         login_host: mysql.ganeshdevops.online
      register: mysql_info
      ignore_errors: true
