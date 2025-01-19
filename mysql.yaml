@@ -6,7 +6,7 @@
      ansible.builtin.package:
        name: mysql-server
        state: installed
-       
+
    - name: Start enable mysql server service    
      ansible.builtin.service: 
        name: mysqld
@@ -21,4 +21,4 @@
 
    - name: Print the mysql output 
        ansible.builtin.debug:
-         msg: "My SQL info; {{mysql_info}}"
+         msg: "My SQL info; {{ mysql_info }}"
