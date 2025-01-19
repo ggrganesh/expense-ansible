@@ -40,11 +40,14 @@
       community.general.npm: 
         path: /app
 
-    - name: Install PyMySQL
-      community.general.pip:
-        name: PyMySQL
-        executable: pip3.9
-        
+    - name: MYSQL libraries 
+      ansible.builtin.pip:
+       name: "{{item}}"
+       executable: pip3.9
+      loop: 
+       - cryptography
+       - PyMySQL
+
     - name: Copy backend service
       ansible.builtin.copy:
         src: backend.service
