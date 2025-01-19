@@ -29,3 +29,7 @@
    - name: Print the mysql output 
      ansible.builtin.debug:
          msg: "My SQL info; {{ mysql_info }}"
+
+   - name: Setup root password 
+     ansible.builtin.command: 
+        when: mysql_info.failed is True
