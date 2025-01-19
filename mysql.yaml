@@ -10,4 +10,3 @@
        name: mysqld
        state: started 
        enable: yes
-     ans
